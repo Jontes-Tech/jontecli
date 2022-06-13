@@ -79,19 +79,10 @@ fn help() {
     println!("---");
     command_handler();
 }
-use rss::Channel;
-use std::error::Error;
-fn get_feed_async(){
-    let content = reqwest::get("https://blog.jontes.page/index.xml")
-    let channel = Channel::read_from(&content[..])?;
-    println!("{}", channel.title);
-    Ok(channel)
-}
 fn blog() {
     println!("This is {}, in CLI", Red.paint("Jonte's Blog"));
     println!("---");
     println!("This is a list of articles:");
-    get_feed_async()();
 }
 fn ls() {
     // Add path functionality later
